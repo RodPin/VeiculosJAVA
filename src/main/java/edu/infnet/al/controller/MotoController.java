@@ -60,11 +60,13 @@ public class MotoController {
 	public String excluir(@PathVariable Integer id) {
 
 		Moto moto = motoService.obterPorId(id);
-		
-		motoService.excluir(id);
-		
-		msg = "Moto "+moto.getModelo()+" excluida!";
-
+		try {
+			motoService.excluir(id);
+			
+			msg = "Moto "+moto.getModelo()+" excluida!";
+		} catch (Exception e) {
+			msg = "Moto "+moto.getModelo()+" nao pode ser excluido pois esta em uma relacao!";
+		}
 		return "redirect:/moto/lista";
 	}
 }

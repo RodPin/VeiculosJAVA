@@ -60,10 +60,15 @@ public class CarroController {
 
 		Carro carro = carroService.obterPorId(id);
 		
-		carroService.excluir(id);
+		try {
+			
+			carroService.excluir(id);
+			
+			msg = "carro "+carro.getModelo()+" excluida!";
+		} catch (Exception e) {
+			msg = "Carro "+carro.getModelo()+" nao pode ser excluido pois esta em uma relacao!";
+		}
 		
-		msg = "carro "+carro.getModelo()+" excluida!";
-
 		return "redirect:/carro/lista";
 	}
 }

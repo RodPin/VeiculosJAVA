@@ -60,9 +60,13 @@ public class CaminhaoController {
 
 		Caminhao caminhao = caminhaoService.obterPorId(id);
 		
-		caminhaoService.excluir(id);
-		
-		msg = "Caminhao "+caminhao.getModelo()+" excluida!";
+		try {
+			caminhaoService.excluir(id);
+			
+			msg = "Caminhao "+caminhao.getModelo()+" excluida!";
+		} catch (Exception e) {
+			msg = "Caminhao "+caminhao.getModelo()+" nao pode ser excluido pois esta em uma relacao!";
+		}
 
 		return "redirect:/caminhao/lista";
 	}
