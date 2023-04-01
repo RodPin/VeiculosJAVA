@@ -1,6 +1,7 @@
 package edu.infnet.al.model.domain;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,14 +25,14 @@ public class Usuario {
 	private int idade;
 	private float salario;
 	
-	@OneToMany
+	@OneToMany (cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Cliente> clientes;
 	
-	@OneToMany
+	@OneToMany (cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Veiculo> veiculos;
-	@OneToMany
+	@OneToMany (cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Compra> compras;
 	
