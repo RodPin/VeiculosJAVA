@@ -57,6 +57,6 @@ public class AuthController {
 		
 		session.removeAttribute("usuario");
 		
-		return "redirect:/";
+		return "redirect:/home";
 	}
 }

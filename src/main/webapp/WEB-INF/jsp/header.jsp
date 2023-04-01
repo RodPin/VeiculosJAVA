@@ -9,15 +9,15 @@
     </div>
 
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/">Home</a></li>
 	  <i:if test="${not empty usuario}">	
 	      <li><a href="/usuario/lista">Usuário</a></li>
 	      <li><a href="/cliente/lista">Cliente</a></li>
-	      <li><a href="#">Veiculo</a></li>
-	      <li><a href="#">Carro</a></li>
-	      <li><a href="#">Moto</a></li>
-	      <li><a href="#">Caminhao</a></li>
-	      <li><a href="#">Compra</a></li>
+	      <li><a href="/veiculo/lista">Veiculo</a></li>
+	      <li><a href="/carro/lista">Carro</a></li>
+	      <li><a href="/moto/lista">Moto</a></li>
+	      <li><a href="/caminhao/lista">Caminhao</a></li>
+	      <li><a href="/compra/lista">Compra</a></li>
       </i:if>
     </ul>
 
