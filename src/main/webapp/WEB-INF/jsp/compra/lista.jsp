@@ -36,7 +36,6 @@
 			    <tr>
 			      <th>ID</th>
 			      <th>Descrição</th>
-			      <th>Web</th>
 			      <th>Data</th>
 			      <th>Clientes</th>
 			      <th>Produtos</th>
@@ -49,7 +48,6 @@
 				    <tr>
 				      <td>${co.id}</td>
 				      <td>${co.descricao}</td>
-				      <td>${co.web}</td>
 				      <td>${co.data}</td>
 				      <td>${co.cliente.nome}</td>
 				      <td>${co.veiculos.size()}</td>

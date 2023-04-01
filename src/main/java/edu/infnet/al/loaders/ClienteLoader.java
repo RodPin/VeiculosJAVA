@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.domain.Cliente;
-import edu.infnet.al.model.repository.UsuarioRepository;
 import edu.infnet.al.model.service.ClienteService;
 
 @Order(2)

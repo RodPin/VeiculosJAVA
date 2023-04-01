@@ -36,7 +36,6 @@ public class Compra {
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	public Compra() {
-	// TODO Auto-generated constructor stub
 	}
 	public Compra(Cliente cliente, List<Veiculo> veiculos) throws CompraSemClienteException, CompraSemVeiculoException {
 		this();
@@ -54,7 +53,7 @@ public class Compra {
     }
 
     public void imprimir(){
-    	System.out.println("Pedido: " + this);
+    	System.out.println("Compra: " + this);
     	System.out.println("Cliente: " + cliente);
     	System.out.println("Qtde Veiculos: " + veiculos.size());
     	System.out.println("Veiculos:");
