@@ -23,11 +23,7 @@ public class UsuarioController {
 
 		List<Usuario> lista = UsuarioRepository.obterLista();
 		
-		System.out.println("Quantidade de usuários = " + lista.size());
-
-		for(Usuario user : lista) {
-			System.out.printf("%s - %s\n", user.getNome(), user.getEmail());
-		}		
+		System.out.println("Quantidade de usuarios = " + lista.size());
 		
 		return "usuario/lista";
 	}
