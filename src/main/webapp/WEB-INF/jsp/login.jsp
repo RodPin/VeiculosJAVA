@@ -31,7 +31,7 @@
 		    <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha" value="123">
 		  </div>
 
-		  <button type="submit" class="btn btn-default">Logar</button>
+		  <button type="submit" class="btn btn-primary">Logar</button>
 		</form>
 	</div>
 
