@@ -38,7 +38,10 @@
 			      <th>Idade</th>
 			      <th>Salário</th>
 			      <th>Clientes</th>
-			      <th></th>
+			      <th>Veiculos</th>
+			      <i:if test="${usuario.admin}">		      
+			      	<th></th>		
+			      </i:if>	
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -55,7 +58,9 @@
 				      <td>${u.salario}</td>
 				      <td>${u.clientes.size()}</td>
 				      <td>${u.veiculos.size()}</td>
-				      <td><a href="/usuario/${u.id}/excluir"  class="danger">excluir</a></td>
+				      <i:if test="${usuario.admin}">		      
+			      		<td><a href="/usuario/${u.id}/excluir" class="danger">excluir</a></td>		
+			      	   </i:if>	
 				    </tr>
 			    </i:forEach>
 			  </tbody>

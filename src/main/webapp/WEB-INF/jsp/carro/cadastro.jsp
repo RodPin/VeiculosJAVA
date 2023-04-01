@@ -36,7 +36,7 @@
 			
 			<div class="form-group">
 				<label>Portas:</label>
-					<select name="cliente" class="form-control">
+					<select name="portas" class="form-control">
 						
 							<option value="2">2 Portas</option>
 							<option value="4">4 Portas</option>

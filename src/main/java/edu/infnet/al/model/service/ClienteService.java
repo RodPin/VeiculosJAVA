@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import edu.infnet.al.model.domain.Cliente;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.repository.ClienteRepository;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 
 @Service
 public class ClienteService {
@@ -28,6 +30,6 @@ public class ClienteService {
 	}
 
 	public Collection<Cliente> obterLista(Usuario usuario){
-		return clienteRepository.obterLista(usuario.getId());
+		return clienteRepository.obterLista(usuario.getId(),Sort.by(Direction.ASC, "nome"));
 	}
 }

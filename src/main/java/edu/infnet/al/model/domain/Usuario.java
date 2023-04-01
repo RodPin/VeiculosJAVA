@@ -22,6 +22,7 @@ public class Usuario {
 	private String email;
 	private String tipo;
 	private String setor;
+	private Boolean admin;
 	private int idade;
 	private float salario;
 	
@@ -70,6 +71,14 @@ public class Usuario {
 				tipo,
 				setor
 			);
+	}
+	
+	
+	public Boolean getAdmin() {
+		return admin;
+	}
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
 	}
 	
 	public String getNome() {
