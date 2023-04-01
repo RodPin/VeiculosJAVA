@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.repository.UsuarioRepository;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class UsuarioService {

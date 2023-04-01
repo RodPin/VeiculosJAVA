@@ -12,9 +12,12 @@ import org.springframework.stereotype.Component;
 
 import edu.infnet.al.model.domain.Moto;
 import edu.infnet.al.model.domain.Carro;
+import edu.infnet.al.model.domain.Caminhao;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.service.MotoService;
 import edu.infnet.al.model.service.CarroService;
+import edu.infnet.al.model.service.CaminhaoService;
+
 
 @Order(3)
 @Component
@@ -25,7 +28,11 @@ public class VeiculoLoader implements ApplicationRunner {
 	
 	@Autowired
 	private CarroService carroService;
+	
+	@Autowired
+	private CaminhaoService caminhaoService;
 
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		try {
@@ -70,6 +77,20 @@ public class VeiculoLoader implements ApplicationRunner {
 							
 							carroService.incluir(carro);
 							System.out.println("Carro: "+ carro.getModelo()+" Adicionada!");
+					}
+					
+					if(fields[0].charAt(0)=='X') {
+						Caminhao caminhao = new Caminhao(
+									fields[1], 
+									Integer.parseInt(fields[2]), 
+									fields[3],
+									fields[4],
+									fields[5]
+								);
+						caminhao.setUsuario(admin);
+							
+							caminhaoService.incluir(caminhao);
+							System.out.println("Caminhao"+ caminhao.getModelo()+" Adicionada!");
 					}
 					
 					

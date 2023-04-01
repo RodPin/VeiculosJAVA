@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import edu.infnet.al.model.domain.Moto;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.repository.MotoRepository;
-
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 @Service
 public class MotoService {
 
@@ -27,7 +28,7 @@ public class MotoService {
 	}
 	
 	public Collection<Moto> obterLista(Usuario usuario){
-		return (Collection<Moto>) motoRepository.obterLista(usuario.getId());
+		return (Collection<Moto>) motoRepository.obterLista(usuario.getId(),Sort.by(Direction.ASC, "modelo"));
 	}
 
 	public Moto obterPorId(Integer id) {

@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import edu.infnet.al.model.domain.Caminhao;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.repository.CaminhaoRepository;
-
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 @Service
 public class CaminhaoService {
 
@@ -27,8 +28,7 @@ public class CaminhaoService {
 	}
 	
 	public Collection<Caminhao> obterLista(Usuario usuario){
-		System.out.print(caminhaoRepository.obterLista(usuario.getId()));
-		return (Collection<Caminhao>) caminhaoRepository.obterLista(usuario.getId());
+		return (Collection<Caminhao>) caminhaoRepository.obterLista(usuario.getId(),Sort.by(Direction.ASC, "modelo"));
 	}
 
 	public Caminhao obterPorId(Integer id) {

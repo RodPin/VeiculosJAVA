@@ -7,10 +7,11 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import edu.infnet.al.model.domain.Carro;
+import org.springframework.data.domain.Sort;
 
 @Repository
 public interface CarroRepository extends CrudRepository<Carro, Integer> {
 
 	@Query("from Carro b WHERE b.usuario.id = :userId")
-	List<Carro> obterLista(Integer userId);
+	List<Carro> obterLista(Integer userId, Sort sort);
 }
