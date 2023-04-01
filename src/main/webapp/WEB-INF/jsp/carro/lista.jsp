@@ -5,14 +5,14 @@
 <head>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<meta charset="ISO-8859-1">
-	<title>Listagem de Veiculos</title>
+	<title>Listagem de Carros</title>
 </head>
 <body>
 	<c:import url="/WEB-INF/jsp/header.jsp"/>
 
 	<div class="container">
 
-		<h3>Listagem de Veiculos</h3>
+		<h3>Listagem de Carros</h3>
 
 		<c:if test="${not empty mensagem}">		
 			<div class="alert alert-success">
@@ -20,12 +20,16 @@
 			</div>		
 		</c:if>
 
-		<c:if test="${empty veiculos}">
-			<h5>Sem veiculos cadastrados!!!</h5>
+		<form action="/carro" method="get">
+			<button type="submit" class="btn btn-primary">Novo</button>
+		</form>
+
+		<c:if test="${empty carros}">
+			<h5>Sem carros cadastradas.</h5>
 		</c:if>
 
-		<c:if test="${not empty veiculos}">
-			<h5>Veiculos cadastrados: ${veiculos.size()}!!!</h5>
+		<c:if test="${not empty carros}">
+			<h5>Carros cadastradas: ${carros.size()}!!!</h5>
 
 			<table class="table table-striped">
 			  <thead>
@@ -34,20 +38,22 @@
 			      <th>Código</th>
 			      <th>Marca</th>
 			      <th>Modelo</th>
+			      <th>Portas</th>
 			      <th>Valor</th>
 			      <th></th>
 			    </tr>
 			  </thead>
 			  <tbody>
 
-			  	<c:forEach var="v" items="${veiculos}">
+			  	<c:forEach var="c" items="${carros}">
 				    <tr>
-				      <td>${v.id}</td>
-				      <td>${v.codigo}</td>
-				      <td>${v.marca}</td>
-				      <td>${v.modelo}</td>
-				      <td>${v.valor}</td>
-				      <td><a href="/veiculo/${v.id}/excluir" class="danger">excluir</a></td>
+				      <td>${c.id}</td>
+				      <td>${c.codigo}</td>
+				      <td>${c.marca}</td>
+				        <td>${c.modelo}</td>
+				      <td>${c.portas}</td>
+				      <td>${c.valor}</td>
+				      <td><a href="/carro/${c.id}/excluir">Excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

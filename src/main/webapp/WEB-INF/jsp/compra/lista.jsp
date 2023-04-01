@@ -25,11 +25,11 @@
 		</form>
 
 		<c:if test="${empty compras}">
-			<h5>Sem compras cadastradas!!!</h5>
+			<h5>Sem compras cadastradas!</h5>
 		</c:if>
 
 		<c:if test="${not empty compras}">
-			<h5>Compras cadastrados: ${compras.size()}!!!</h5>
+			<h5>Compras cadastradas: ${compras.size()}</h5>
 
 			<table class="table table-striped">
 			  <thead>

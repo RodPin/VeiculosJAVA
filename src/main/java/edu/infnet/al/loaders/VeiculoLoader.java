@@ -11,15 +11,20 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import edu.infnet.al.model.domain.Moto;
+import edu.infnet.al.model.domain.Carro;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.service.MotoService;
+import edu.infnet.al.model.service.CarroService;
 
 @Order(3)
 @Component
-public class MotoLoader implements ApplicationRunner {
+public class VeiculoLoader implements ApplicationRunner {
 
 	@Autowired
 	private MotoService motoService;
+	
+	@Autowired
+	private CarroService carroService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -33,23 +38,41 @@ public class MotoLoader implements ApplicationRunner {
 				BufferedReader leitura = new BufferedReader(fileR);
 
 				String linha = leitura.readLine();			
-				String [] motosFields = null;
+				String [] fields = null;
 
 				while(linha != null) {
 					
-					motosFields = linha.split(";");
+					fields = linha.split(";");
 					
-					Moto moto = new Moto(
-							motosFields[0], 
-							Integer.parseInt(motosFields[0]), 
-							motosFields[2],
-							motosFields[3],
-							Boolean.parseBoolean(motosFields[4])
-						);
-					moto.setUsuario(admin);
+					if(fields[0].charAt(0)=='M') {
+						 Moto moto = new Moto(
+									fields[1], 
+									Integer.parseInt(fields[2]), 
+									fields[3],
+									fields[4],
+									Boolean.parseBoolean(fields[5])
+								);
+							moto.setUsuario(admin);
+							
+							motoService.incluir(moto);
+							System.out.println("Moto: "+ moto.getModelo()+" Adicionada!");
+					}
 					
-					motoService.incluir(moto);
-					System.out.println("Moto: "+ moto.getModelo()+" Adicionada!");
+					if(fields[0].charAt(0)== 'C') {
+						Carro carro = new Carro(
+									fields[1], 
+									Integer.parseInt(fields[2]), 
+									fields[3],
+									fields[4],
+									Integer.parseInt(fields[5])
+								);
+							carro.setUsuario(admin);
+							
+							carroService.incluir(carro);
+							System.out.println("Carro: "+ carro.getModelo()+" Adicionada!");
+					}
+					
+					
 
 					linha = leitura.readLine();
 				}
@@ -61,7 +84,7 @@ public class MotoLoader implements ApplicationRunner {
 			} 
 			
 		} finally {
-			System.out.println("Sucesso Motos!!!");
+			System.out.println("Sucesso Add Veiculos!!!");
 		}	
 	}
 } 

@@ -1,3 +1,6 @@
-1;100000;kawazaki;ninja;true;
-2;100000;honda;cbr;true;
-3;100000;yamaha;turtle;false;
+M;1;2232;kawazaki;ninja;true;
+M;2;100333;honda;cbr;true;
+M;3;10220;yamaha;turtle;false;
+C;4;18800;bmw;x5;4;
+C;6;15000;bmw;x1;2;
+C;6;15000;bmw;x1;4;

@@ -11,60 +11,59 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import edu.infnet.al.model.domain.Carro;
-import edu.infnet.al.model.domain.Moto;
 import edu.infnet.al.model.domain.Usuario;
-import edu.infnet.al.model.service.MotoService;
+import edu.infnet.al.model.service.CarroService;
 
 @Controller
-public class MotoController {
+public class CarroController {
 	
 	@Autowired
-	private MotoService motoService;
+	private CarroService carroService;
 
 	private String msg;
 
-	@GetMapping(value = "/moto")
+	@GetMapping(value = "/carro")
 	public String telaCadastro() {
-		return "moto/cadastro";
+		return "carro/cadastro";
 	}	
 	
-	@GetMapping(value = "/moto/lista")
+	@GetMapping(value = "/carro/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
 		
-		Collection<Moto> motos= motoService.obterLista(usuario);
-		System.out.print(motos);
-		model.addAttribute("motos", motos);
+		Collection<Carro> carros = carroService.obterLista(usuario);
+		System.out.print(carros);
+		model.addAttribute("carros", carros);
 
 		model.addAttribute("mensagem", msg);
 		
 		msg = null;
 
-		return "moto/lista";
+		return "carro/lista";
 	}
 	
-	@PostMapping(value = "/moto/incluir")
-	public String incluir(Moto moto, @SessionAttribute("usuario") Usuario usuario) {
+	@PostMapping(value = "/carro/incluir")
+	public String incluir(Carro carro, @SessionAttribute("usuario") Usuario usuario) {
 		
-		System.out.print(moto);
+		System.out.print(carro);
 		System.out.print(usuario);
-		moto.setUsuario(usuario);
+		carro.setUsuario(usuario);
 
-		motoService.incluir(moto);
+		carroService.incluir(carro);
 		
-		msg = "Moto "+ moto.getModelo()+" Incluida!!!";
+		msg = "carro "+ carro.getModelo()+" Incluida!!!";
 		
-		return "redirect:/moto/lista";
+		return "redirect:/carro/lista";
 	}
 		
-	@GetMapping(value = "/moto/{id}/excluir")
+	@GetMapping(value = "/carro/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Moto moto = motoService.obterPorId(id);
+		Carro carro = carroService.obterPorId(id);
 		
-		motoService.excluir(id);
+		carroService.excluir(id);
 		
-		msg = "Moto "+moto.getModelo()+" excluida!";
+		msg = "carro "+carro.getModelo()+" excluida!";
 
-		return "redirect:/moto/lista";
+		return "redirect:/carro/lista";
 	}
 }
