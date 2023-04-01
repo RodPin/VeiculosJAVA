@@ -8,7 +8,7 @@
 	<title>Listagem de Motos</title>
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	<c:import url="/WEB-INF/jsp/header.jsp"/>
 
 	<div class="container">
 
@@ -20,8 +20,8 @@
 			</div>		
 		</c:if>
 
-		<form action="moto" method="get">
-			<button type="submit">Novo</button>
+		<form action="/moto" method="get">
+			<button type="submit" class="btn btn-primary">Nova</button>
 		</form>
 
 		<c:if test="${empty motos}">
@@ -48,10 +48,9 @@
 				    <tr>
 				      <td>${m.id}</td>
 				      <td>${m.codigo}</td>
-				      <td>${m.nome}</td>
 				      <td>${m.valor}</td>
 				      <td>${m.marca}</td>
-				      <td><a href="/moto/${m.id}/excluir">excluir</a></td>
+				      <td><a href="/moto/${m.id}/excluir">Excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

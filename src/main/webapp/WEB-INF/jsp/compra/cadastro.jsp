@@ -35,7 +35,7 @@
 <!-- 				<input type="text" name="data" value="16/03/2023" class="form-control"> -->
 <!-- 			</div> -->
 
-			<button type="submit">Cadastrar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 </body>

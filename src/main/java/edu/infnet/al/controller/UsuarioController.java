@@ -42,7 +42,7 @@ public class UsuarioController {
 		usuarioService.incluir(usuario);
 		
 		msg = usuario.getNome()+ "Incluido !";
-		
+	
 		return "redirect:/usuario/lista";
 	}
 		

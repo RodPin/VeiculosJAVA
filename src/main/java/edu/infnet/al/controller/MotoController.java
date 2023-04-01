@@ -24,7 +24,7 @@ public class MotoController {
 	public String telaCadastro() {
 		return "moto/cadastro";
 	}	
-
+	
 	@GetMapping(value = "/moto/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
 		
@@ -44,7 +44,7 @@ public class MotoController {
 
 		motoService.incluir(moto);
 		
-		msg = "Moto "+moto.getNome()+" Incluida!!!";
+		msg = "Moto "+moto.getModelo()+" Incluida!!!";
 		
 		return "redirect:/moto/lista";
 	}
@@ -56,7 +56,7 @@ public class MotoController {
 		
 		motoService.excluir(id);
 		
-		msg = "Moto "+moto.getNome()+" excluida!";
+		msg = "Moto "+moto.getModelo()+" excluida!";
 
 		return "redirect:/moto/lista";
 	}

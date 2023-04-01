@@ -59,7 +59,7 @@ public class Compra {
     	System.out.println("Qtde Veiculos: " + veiculos.size());
     	System.out.println("Veiculos:");
     	for(Veiculo v : veiculos) {
-    		System.out.println("- " + v.getNome());
+    		System.out.println("- " + v.getModelo());
     	}
     }
 

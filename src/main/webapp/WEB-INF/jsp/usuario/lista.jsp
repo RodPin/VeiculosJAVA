@@ -56,7 +56,7 @@
 				      <td>${u.idade}</td>
 				      <td>${u.salario}</td>
 				      <td>${u.clientes.size()}</td>
-				      <td>${u.veiculos÷.size()}</td>
+				      <td>${u.veiculos.size()}</td>
 				      <td><a href="/usuario/${u.id}/excluir">excluir</a></td>
 				    </tr>
 			    </i:forEach>

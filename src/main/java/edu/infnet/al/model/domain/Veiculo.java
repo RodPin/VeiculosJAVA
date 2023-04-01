@@ -23,9 +23,9 @@ public abstract class Veiculo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String codigo;
-	private String nome;
 	private float valor;
 	public String marca;
+	public String modelo;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
@@ -36,7 +36,7 @@ public abstract class Veiculo {
 	public Veiculo() {
 	}
 	
-	public Veiculo(String codigo, String nome, float valor) throws VeiculoValorException {
+	public Veiculo(String codigo, String modelo, float valor) throws VeiculoValorException {
 		
 		if(valor == 0) {
 			throw new VeiculoValorException("O valor do veiculo nao pode ser 0!");
@@ -47,7 +47,7 @@ public abstract class Veiculo {
 		}
 
 		this.codigo = codigo;
-		this.nome = nome;
+		this.modelo = modelo;
 		this.valor = valor;
 	}
 	
@@ -59,7 +59,7 @@ public abstract class Veiculo {
 		StringBuilder sb = new StringBuilder();
 		sb.append(codigo);
 		sb.append(";");
-		sb.append(nome);
+		sb.append(modelo);
 		sb.append(";");
 		sb.append(valor);
 
@@ -72,8 +72,8 @@ public abstract class Veiculo {
 	public String getCodigo() {
 		return codigo;
 	}
-	public String getNome() {
-		return nome;
+	public String getModelo() {
+		return modelo;
 	}
 	public float getValor() {
 		return valor;
@@ -91,8 +91,8 @@ public abstract class Veiculo {
 		this.codigo = codigo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setModelo(String modelo) {
+		this.modelo= modelo;
 	}
 
 	public void setValor(float valor) {

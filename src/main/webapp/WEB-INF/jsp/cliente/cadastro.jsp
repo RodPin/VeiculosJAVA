@@ -30,7 +30,7 @@
 				<input type="email" name="email" value="rodrigo@gmail.com" class="form-control">
 			</div>
 
-			<button type="submit">Cadastrar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 </body>

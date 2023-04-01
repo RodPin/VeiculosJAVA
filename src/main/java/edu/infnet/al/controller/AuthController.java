@@ -42,7 +42,7 @@ public class AuthController {
 		if(user != null) {
 			model.addAttribute("usuario", user);
 			
-			return "redirect:/home";
+			return "redirect:/usuario/lista";
 		}
 		
 		

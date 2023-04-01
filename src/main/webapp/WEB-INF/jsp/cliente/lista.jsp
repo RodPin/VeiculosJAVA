@@ -22,7 +22,7 @@
 		</c:if>
 
 		<form action="/cliente" method="get">
-			<button type="submit">Novo</button>
+			<button type="submit" class="btn btn-primary">Novo</button>
 		</form>
 
 		<c:if test="${empty clientes}">
