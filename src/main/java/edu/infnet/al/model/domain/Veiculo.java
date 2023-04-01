@@ -36,7 +36,7 @@ public abstract class Veiculo {
 	public Veiculo() {
 	}
 	
-	public Veiculo(String codigo, String modelo, float valor) throws VeiculoValorException {
+	public Veiculo(String codigo,String marca, String modelo, float valor) throws VeiculoValorException {
 		
 		if(valor == 0) {
 			throw new VeiculoValorException("O valor do veiculo nao pode ser 0!");
@@ -48,6 +48,7 @@ public abstract class Veiculo {
 
 		this.codigo = codigo;
 		this.modelo = modelo;
+		this.marca = marca;
 		this.valor = valor;
 	}
 	
@@ -79,6 +80,11 @@ public abstract class Veiculo {
 		return valor;
 	}
 
+	public String getMarca() {
+		return marca;
+	}
+
+	
 	public Integer getId() {
 		return id;
 	}

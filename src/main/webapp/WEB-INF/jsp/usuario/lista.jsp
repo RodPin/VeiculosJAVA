@@ -33,7 +33,6 @@
 			      <th>Nome</th>
 			      <th>Senha</th>
 			      <th>E-mail</th>
-			      <th>Características</th>
 			      <th>Tipo</th>
 			      <th>Setor</th>
 			      <th>Idade</th>
@@ -50,14 +49,13 @@
 				      <td>${u.nome}</td>
 				      <td>${u.senha}</td>
 				      <td>${u.email}</td>
-				      <td>${u.caracteristicas}</td>
 				      <td>${u.tipo}</td>
 				      <td>${u.setor}</td>
 				      <td>${u.idade}</td>
 				      <td>${u.salario}</td>
 				      <td>${u.clientes.size()}</td>
 				      <td>${u.veiculos.size()}</td>
-				      <td><a href="/usuario/${u.id}/excluir">excluir</a></td>
+				      <td><a href="/usuario/${u.id}/excluir"  class="danger">excluir</a></td>
 				    </tr>
 			    </i:forEach>
 			  </tbody>

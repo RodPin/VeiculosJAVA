@@ -45,7 +45,7 @@
 				      <td>${v.codigo}</td>
 				      <td>${v.nome}</td>
 				      <td>${v.valor}</td>
-				      <td><a href="/veiculo/${p.id}/excluir">excluir</a></td>
+				      <td><a href="/veiculo/${p.id}/excluir" class="danger">excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

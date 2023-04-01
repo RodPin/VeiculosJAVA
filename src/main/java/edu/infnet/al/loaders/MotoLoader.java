@@ -11,6 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import edu.infnet.al.model.domain.Moto;
+import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.service.MotoService;
 
 @Order(3)
@@ -25,7 +26,10 @@ public class MotoLoader implements ApplicationRunner {
 		try {
 	
 			try {
-				FileReader fileR = new FileReader("motos.txt");
+				Usuario admin = new Usuario();
+				admin.setId(1);
+				
+				FileReader fileR = new FileReader("veiculos.txt");
 				BufferedReader leitura = new BufferedReader(fileR);
 
 				String linha = leitura.readLine();			
@@ -34,7 +38,7 @@ public class MotoLoader implements ApplicationRunner {
 				while(linha != null) {
 					
 					motosFields = linha.split(";");
-
+					
 					Moto moto = new Moto(
 							motosFields[0], 
 							Integer.parseInt(motosFields[0]), 
@@ -42,9 +46,9 @@ public class MotoLoader implements ApplicationRunner {
 							motosFields[3],
 							Boolean.parseBoolean(motosFields[4])
 						);
+					moto.setUsuario(admin);
 					
 					motoService.incluir(moto);
-
 					System.out.println("Moto: "+ moto.getModelo()+" Adicionada!");
 
 					linha = leitura.readLine();

@@ -13,9 +13,7 @@ public class Moto extends Veiculo {
 	}
 
 	public Moto(String codigo, float valor, String marca, String modelo, Boolean turbo) throws VeiculoValorException {
-		super(codigo, modelo, valor);
-		this.setMarca(marca);
-		this.setModelo(modelo);
+		super(codigo, marca, modelo, valor);
 		this.setTurbo(turbo);
 	}
 
@@ -32,7 +30,7 @@ public class Moto extends Veiculo {
 		sb.append(";");
 		sb.append(turbo ? "Com turbo" : "Sem turbo");
 		sb.append(";");
-		sb.append(marca);
+		sb.append(this.getMarca());
 
 		return sb.toString();
 	}

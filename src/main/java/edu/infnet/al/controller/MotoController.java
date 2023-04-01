@@ -40,11 +40,13 @@ public class MotoController {
 	@PostMapping(value = "/moto/incluir")
 	public String incluir(Moto moto, @SessionAttribute("usuario") Usuario usuario) {
 		
+		System.out.print(moto);
+		System.out.print(usuario);
 		moto.setUsuario(usuario);
 
 		motoService.incluir(moto);
 		
-		msg = "Moto "+moto.getModelo()+" Incluida!!!";
+		msg = "Moto "+ moto.getModelo()+" Incluida!!!";
 		
 		return "redirect:/moto/lista";
 	}

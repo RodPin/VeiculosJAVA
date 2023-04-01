@@ -36,9 +36,10 @@
 			    <tr>
 			      <th>ID</th>
 			      <th>Código</th>
-			      <th>Nome</th>
-			      <th>Valor</th>
 			      <th>Marca</th>
+			      <th>Modelo</th>
+			      <th>Turbo</th>
+			      <th>Valor</th>
 			      <th></th>
 			    </tr>
 			  </thead>
@@ -48,8 +49,11 @@
 				    <tr>
 				      <td>${m.id}</td>
 				      <td>${m.codigo}</td>
-				      <td>${m.valor}</td>
+				      
 				      <td>${m.marca}</td>
+				        <td>${m.modelo}</td>
+				      <td>${m.turbo}</td>
+				      <td>${m.valor}</td>
 				      <td><a href="/moto/${m.id}/excluir">Excluir</a></td>
 				    </tr>
 			    </c:forEach>

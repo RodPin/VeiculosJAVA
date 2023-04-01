@@ -19,7 +19,6 @@ public class Usuario {
 	private String nome;
 	private String senha;
 	private String email;
-	private String[] caracteristicas;
 	private String tipo;
 	private String setor;
 	private int idade;
@@ -61,15 +60,14 @@ public class Usuario {
 
 		return String.format(
 				"Nome: %s Emaik: %s Senha:%s, Idade:%d Salario:R$%.2f. "
-				+ "Tipo: %s Setor: %s Caracteristicas: %d", 
+				+ "Tipo: %s Setor: %s", 
 				nome,
 				email,
 				senha,
 				idade,
 				salario,
 				tipo,
-				setor,
-				caracteristicas.length
+				setor
 			);
 	}
 	
@@ -91,12 +89,7 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String[] getCaracteristicas() {
-		return caracteristicas;
-	}
-	public void setCaracteristicas(String[] caracteristicas) {
-		this.caracteristicas = caracteristicas;
-	}
+
 	public String getTipo() {
 		return tipo;
 	}

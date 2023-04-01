@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="i"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,28 +8,41 @@
 	<title>Cadastro de Motos</title>
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/header.jsp"/>
-
+	<i:import url="/WEB-INF/jsp/header.jsp"/>
 	<div class="container">
 
 		<form action="/moto/incluir" method="post">
 			<h3>Cadastro de Motos</h3>
 
-			<c:import url="/WEB-INF/jsp/produto/cadastro.jsp"/>
+		
 
 			<div class="form-group">
 				<label>Características:</label>
 			    <div class="form-check">
 			      <label class="form-check-label">
-			        <input type="checkbox" name="gelada" value="true" class="form-check-input" > Turbo
+			        <input type="checkbox" name="turbo" value="true" class="form-check-input" > Turbo
 			      </label>
 			    </div>
 			</div>
-
+			
+			<div class="form-group">
+				<label>Marca:</label> 	
+				<input type="text" name="codigo" value="52" class="form-control">
+			</div>
 
 			<div class="form-group">
 				<label>Marca:</label> 	
 				<input type="text" name="marca" value="suzuki" class="form-control">
+			</div>
+			
+			<div class="form-group">
+				<label>Modelo:</label> 	
+				<input type="text" name="Modelo" value="rampage" class="form-control">
+			</div>
+			
+			<div class="form-group">
+				<label>Valor:</label> 	
+				<input type="text" name="valor" value="10000" class="form-control">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
