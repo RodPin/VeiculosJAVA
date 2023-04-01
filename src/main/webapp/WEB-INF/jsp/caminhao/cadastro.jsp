@@ -5,14 +5,14 @@
 <head>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<meta charset="ISO-8859-1">
-	<title>Cadastro de Carros</title>
+	<title>Cadastro de Caminhao</title>
 </head>
 <body>
 	<i:import url="/WEB-INF/jsp/header.jsp"/>
 	<div class="container">
 
-		<form action="/carro/incluir" method="post">
-			<h3>Cadastro de Carros</h3>
+		<form action="/caminhao/incluir" method="post">
+			<h3>Cadastro de Caminhao</h3>
 
 	
 			<div class="form-group">
@@ -21,31 +21,30 @@
 			
 			<div class="form-group">
 				<label>Codigo:</label> 	
-				<input type="text" name="codigo" value="56" class="form-control">
+				<input type="text" name="codigo" value="888" class="form-control">
 			</div>
 
 			<div class="form-group">
 				<label>Marca:</label> 	
-				<input type="text" name="marca" value="bmw" class="form-control">
+				<input type="text" name="marca" value="Hyunday" class="form-control">
 			</div>
 			
 			<div class="form-group">
 				<label>Modelo:</label> 	
-				<input type="text" name="Modelo" value="x10" class="form-control">
+				<input type="text" name="Modelo" value="PW10" class="form-control">
 			</div>
 			
 			<div class="form-group">
-				<label>Portas:</label>
-					<select name="cliente" class="form-control">
-						
-							<option value="2">2 Portas</option>
-							<option value="4">4 Portas</option>
-						
+				<label>Combustivel:</label>
+					<select name="combustivel" class="form-control">
+						<option value="gasolina">Gasolina</option>
+						<option value="diesel">Diesel</option>
+						<option value="alcool">Alcool</option>
 					</select>
 			</div>
 			<div class="form-group">
 				<label>Valor:</label> 	
-				<input type="text" name="valor" value="10000" class="form-control">
+				<input type="text" name="valor" value="152200" class="form-control">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
