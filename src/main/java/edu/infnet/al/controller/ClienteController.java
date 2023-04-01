@@ -51,9 +51,13 @@ public class ClienteController {
 	@GetMapping(value = "/cliente/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		clienteService.excluir(id);
+		try{
+			clienteService.excluir(id);
 		
-		msg = "Cliente ("+id+") Excluido.";
+			msg = "Cliente ("+id+") Excluido.";
+		} catch (Exception e) {
+			msg = "Exclusao do  ("+id+") nao e possivel pois esta relacionado em uma compra!";
+		}
 
 		return "redirect:/cliente/lista";
 	}
