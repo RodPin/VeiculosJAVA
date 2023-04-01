@@ -1,7 +1,20 @@
 package edu.infnet.al.model.domain;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "TUsuario")
 public class Usuario {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String senha;
@@ -11,6 +24,12 @@ public class Usuario {
 	private String setor;
 	private int idade;
 	private float salario;
+	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Cliente> clientes;
+	public Usuario() {
+	}
 	
 	public Integer getId() {
 		return id;
@@ -93,5 +112,12 @@ public class Usuario {
 	}
 	public void setSalario(float salario) {
 		this.salario = salario;
+	}
+	
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 }

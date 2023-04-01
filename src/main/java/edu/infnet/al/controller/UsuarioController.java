@@ -1,14 +1,12 @@
 package edu.infnet.al.controller;
 
-
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.infnet.al.model.domain.Usuario;
-import edu.infnet.al.model.repository.UsuarioRepository;
+import edu.infnet.al.model.service.UsuarioService;
 
 import org.springframework.ui.Model;
 
@@ -16,6 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class UsuarioController {
+	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	private String msg;
 
@@ -26,8 +27,7 @@ public class UsuarioController {
 
 	@GetMapping(value = "/usuario/lista")
 	public String telaLista(Model model) {
-
-		model.addAttribute("usuarios", UsuarioRepository.obterLista());
+		model.addAttribute("usuarios", usuarioService.obterLista());
 		
 		model.addAttribute("mensagem", msg);
 		
@@ -39,19 +39,19 @@ public class UsuarioController {
 	@PostMapping(value = "/usuario/incluir")
 	public String incluir(Usuario usuario) {
 
-		UsuarioRepository.incluir(usuario);
+		usuarioService.incluir(usuario);
 		
-		msg = usuario.getNome()+ "Incluido com sucesso!";
+		msg = usuario.getNome()+ "Incluido !";
 		
-		return "redirect:/";
+		return "redirect:/usuario/lista";
 	}
 		
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
+		usuarioService.excluir(id);
+
+		msg =  "Usuario com id "+id+" Excluido";
 		
-		Usuario usuario = UsuarioRepository.excluir(id);
-		
-		msg = usuario.getNome()+"Excluido com sucesso!!!";
 
 		return "redirect:/usuario/lista";
 	}

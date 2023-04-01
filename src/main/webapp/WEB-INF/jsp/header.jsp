@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="i"%>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse bg-primary">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Sistema De Veiculos</a>
@@ -12,7 +12,7 @@
       <li class="active"><a href="#">Home</a></li>
 	  <i:if test="${not empty usuario}">	
 	      <li><a href="/usuario/lista">Usuário</a></li>
-	      <li><a href="#">Solicitante</a></li>
+	      <li><a href="/cliente/lista">Cliente</a></li>
 	      <li><a href="#">Veiculo</a></li>
 	      <li><a href="#">Carro</a></li>
 	      <li><a href="#">Moto</a></li>
