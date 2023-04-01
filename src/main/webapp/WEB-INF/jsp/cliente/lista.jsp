@@ -52,7 +52,7 @@
 				      <td>${c.cpf}</td>
 				      <td>${c.email}</td>
 				      <td>${c.usuario.nome}</td>
-				      <td><a href="/cliente/${s.id}/excluir">Excluir</a></td>
+				      <td><a href="/cliente/${c.id}/excluir">Excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

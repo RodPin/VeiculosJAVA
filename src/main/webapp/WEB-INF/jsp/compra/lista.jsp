@@ -51,7 +51,7 @@
 				      <td>${co.data}</td>
 				      <td>${co.cliente.nome}</td>
 				      <td>${co.veiculos.size()}</td>
-				      <td><a href="/compra/${p.id}/excluir">Excluir</a></td>
+				      <td><a href="/compra/${co.id}/excluir">Excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>
