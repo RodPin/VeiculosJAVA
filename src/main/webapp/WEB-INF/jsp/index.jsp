@@ -7,6 +7,6 @@
 <title>Veiculos</title>
 </head>
 <body>
-	<h3>Cadastro de <a href="/usuario">usuários</a></h3>
+	<h3>Cadastro de <a href="/usuario/list">usuários</a></h3>
 </body>
 </html>

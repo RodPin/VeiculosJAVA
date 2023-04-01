@@ -10,12 +10,17 @@ public class Usuario {
 	private String setor;
 	private int idade;
 	private float salario;
-
-	public Usuario(String nome, String email) {
-		this.setNome(nome);
+	
+	public Usuario(String email, String senha) {
 		this.setEmail(email);
+		this.setSenha(senha);
 	}
-
+	
+	public Usuario(String nome, String email, String senha) {
+		this(email, senha);
+		this.setNome(nome);
+	}
+	
 	@Override
 	public String toString() {
 
@@ -32,7 +37,7 @@ public class Usuario {
 				caracteristicas.length
 			);
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
