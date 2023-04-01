@@ -10,8 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import edu.infnet.al.model.domain.Usuario;
 import edu.infnet.al.model.repository.UsuarioRepository;
 
+import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
 @Controller
 public class UsuarioController {
+	
+	private String msg;
 
 	@GetMapping(value = "/usuario")
 	public String telaCadastro() {
@@ -19,11 +25,13 @@ public class UsuarioController {
 	}
 
 	@GetMapping(value = "/usuario/lista")
-	public String telaLista() {
+	public String telaLista(Model model) {
 
-		List<Usuario> lista = UsuarioRepository.obterLista();
+		model.addAttribute("usuarios", UsuarioRepository.obterLista());
 		
-		System.out.println("Quantidade de usuarios = " + lista.size());
+		model.addAttribute("mensagem", msg);
+		
+		msg = null;
 		
 		return "usuario/lista";
 	}
@@ -33,6 +41,18 @@ public class UsuarioController {
 
 		UsuarioRepository.incluir(usuario);
 		
+		msg = usuario.getNome()+ "Incluido com sucesso!";
+		
+		return "redirect:/";
+	}
+		
+	@GetMapping(value = "/usuario/{id}/excluir")
+	public String excluir(@PathVariable Integer id) {
+		
+		Usuario usuario = UsuarioRepository.excluir(id);
+		
+		msg = usuario.getNome()+"Excluido com sucesso!!!";
+
 		return "redirect:/usuario/lista";
 	}
 }

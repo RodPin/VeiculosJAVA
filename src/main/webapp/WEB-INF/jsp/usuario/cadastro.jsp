@@ -82,7 +82,7 @@
 					<option value="3" selected>Desenvolvimento</option>
 				</select>
 			</div>
-			<button type="submit">Cadastrar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 </body>

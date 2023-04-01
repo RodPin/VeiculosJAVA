@@ -1,7 +1,8 @@
 package edu.infnet.al.model.domain;
 
 public class Usuario {
-
+	
+	private Integer id;
 	private String nome;
 	private String senha;
 	private String email;
@@ -10,6 +11,13 @@ public class Usuario {
 	private String setor;
 	private int idade;
 	private float salario;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public Usuario(String email, String senha) {
 		this.setEmail(email);
@@ -25,8 +33,8 @@ public class Usuario {
 	public String toString() {
 
 		return String.format(
-				"O usu�rio %s tem as credenciais %s e %s, %d anos e ganha R$%.2f. "
-				+ "� um usu�rio do tipo %s, atua no setor %s e tem %d caracter�sticas", 
+				"Nome: %s Emaik: %s Senha:%s, Idade:%d Salario:R$%.2f. "
+				+ "Tipo: %s Setor: %s Caracteristicas: %d", 
 				nome,
 				email,
 				senha,

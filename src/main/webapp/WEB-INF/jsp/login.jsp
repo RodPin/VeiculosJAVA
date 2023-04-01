@@ -1,5 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="i"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,13 @@
 
 	<div class="container">
 		<h2>Login de usuario</h2>
+		<i:if test="${not empty mensagem}">		
+			<div class="alert alert-danger">
+			  <strong>Atenção!</strong> ${mensagem}
+			</div>		
+		</i:if>
+
+
 
 		<form action="/login" method="post">
 

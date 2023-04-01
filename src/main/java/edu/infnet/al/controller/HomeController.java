@@ -8,7 +8,7 @@ public class HomeController {
 
 	@GetMapping(value = "/")
 	public String telaIndex() {
-		return "redirect:/login";
+		return "index";
 	}
 
 	@GetMapping(value = "/home")
