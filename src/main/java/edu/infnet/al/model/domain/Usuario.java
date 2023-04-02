@@ -21,10 +21,8 @@ public class Usuario {
 	private String senha;
 	private String email;
 	private String tipo;
-	private String setor;
 	private Boolean admin;
 	private int idade;
-	private float salario;
 	
 	@OneToMany (cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
@@ -67,9 +65,7 @@ public class Usuario {
 				email,
 				senha,
 				idade,
-				salario,
-				tipo,
-				setor
+				tipo
 			);
 	}
 	
@@ -106,23 +102,12 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getSetor() {
-		return setor;
-	}
-	public void setSetor(String setor) {
-		this.setor = setor;
-	}
+	
 	public int getIdade() {
 		return idade;
 	}
 	public void setIdade(int idade) {
 		this.idade = idade;
-	}
-	public float getSalario() {
-		return salario;
-	}
-	public void setSalario(float salario) {
-		this.salario = salario;
 	}
 	
 	public List<Cliente> getClientes() {

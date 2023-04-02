@@ -19,10 +19,8 @@ public class UsuarioLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Usuario userAdmin = new Usuario("Administrador ", "admin@gmail.com", "123");
+		Usuario userAdmin = new Usuario("Rodrigo Administrador", "admin@gmail.com", "123");
 		userAdmin.setIdade(34);
-		userAdmin.setSalario(1234);
-		userAdmin.setSetor("Administracao");
 		userAdmin.setTipo("Admin");
 		userAdmin.setAdmin(true);
 		usuarioService.incluir(userAdmin);
@@ -30,15 +28,12 @@ public class UsuarioLoader implements ApplicationRunner {
 		System.out.println("Administrador "+userAdmin.getNome()+" Incluido!");
 		
 		for (int i = 0; i < 2; i++) {
+			
 			Usuario usuario = new Usuario("Administrador " + i, "admin"+i+"gmail.com", "0"+i);
 			usuario.setIdade(i*4);
-			usuario.setSalario(i*100);
-			usuario.setSetor("Presidência " + i);
-			usuario.setTipo("Admin " + i);
+			usuario.setTipo("Admin");
 
 			usuarioService.incluir(usuario);
-			
-			System.out.println("Usuario "+usuario.getNome()+" Incluido!");
 		}
 
 	}

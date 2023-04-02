@@ -43,7 +43,7 @@ public class UsuarioController {
 		
 		msg = usuario.getNome()+ "Incluido !";
 	
-		return "redirect:/usuario/lista";
+		return "redirect:/";
 	}
 		
 	@GetMapping(value = "/usuario/{id}/excluir")
