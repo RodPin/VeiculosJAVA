@@ -38,7 +38,7 @@
 			      <th>Descrição</th>
 			      <th>Data</th>
 			      <th>Clientes</th>
-			      <th>Produtos</th>
+			      <th>Veiculos</th>
 			      <th></th>
 			    </tr>
 			  </thead>

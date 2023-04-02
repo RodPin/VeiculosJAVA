@@ -29,7 +29,7 @@ public class UsuarioLoader implements ApplicationRunner {
 		
 		System.out.println("Administrador "+userAdmin.getNome()+" Incluido!");
 		
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 2; i++) {
 			Usuario usuario = new Usuario("Administrador " + i, "admin"+i+"gmail.com", "0"+i);
 			usuario.setIdade(i*4);
 			usuario.setSalario(i*100);

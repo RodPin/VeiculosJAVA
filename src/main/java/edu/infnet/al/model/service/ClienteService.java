@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import edu.infnet.al.model.domain.Cliente;
 import edu.infnet.al.model.domain.Usuario;
+import edu.infnet.al.model.domain.Veiculo;
 import edu.infnet.al.model.repository.ClienteRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -32,4 +33,9 @@ public class ClienteService {
 	public Collection<Cliente> obterLista(Usuario usuario){
 		return clienteRepository.obterLista(usuario.getId(),Sort.by(Direction.ASC, "nome"));
 	}
+	
+	public Cliente obterPorId(Integer id) {
+		return clienteRepository.findById(id).orElse(null);
+	}
+	
 }
