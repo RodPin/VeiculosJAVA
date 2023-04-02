@@ -1,9 +1,9 @@
-M;1;2232;kawazaki;ninja;true;
-M;2;100333;honda;cbr;true;
-M;3;10220;yamaha;turtle;false;
-C;4;18800;bmw;x5;4;
-C;5;15000;bmw;x1;2;
-C;6;15000;bmw;x1;4;
+M;1;2232;Kawazaki;Ninja;true;
+M;2;100333;Honda;Cbr;true;
+M;3;10220;Yamaha;Turtle;false;
+C;4;18800;Bmw;X5;4;
+C;5;15000;Bmw;X1;2;
+C;6;15000;Bmw;X1;4;
 X;4;18800;Foton;XR20;diesel;
 X;6;15000;Hyundai;HD80;alcool;
 X;6;15000;Iveco;KC90;gasolina;
