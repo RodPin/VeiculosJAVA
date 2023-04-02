@@ -27,6 +27,7 @@
 	      <li><a href="/usuario"><span class="glyphicon glyphicon-user"></span> Registre-se</a></li>
 		</i:if>
 		<i:if test="${not empty usuario}">
+	      <li><a> ${usuario.nome}</a></li>
 	      <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 	    </i:if>
     </ul>
