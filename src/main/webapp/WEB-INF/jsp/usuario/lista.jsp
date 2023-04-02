@@ -33,10 +33,8 @@
 			      <th>Nome</th>
 			      <th>Senha</th>
 			      <th>E-mail</th>
-			      <th>Tipo</th>
-			      <th>Setor</th>
+			      <th>Tipo</th>			      
 			      <th>Idade</th>
-			      <th>Salário</th>
 			      <th>Clientes</th>
 			      <th>Veiculos</th>
 			      <i:if test="${usuario.admin}">		      
@@ -53,9 +51,7 @@
 				      <td>${u.senha}</td>
 				      <td>${u.email}</td>
 				      <td>${u.tipo}</td>
-				      <td>${u.setor}</td>
 				      <td>${u.idade}</td>
-				      <td>${u.salario}</td>
 				      <td>${u.clientes.size()}</td>
 				      <td>${u.veiculos.size()}</td>
 				      <i:if test="${usuario.admin}">		      

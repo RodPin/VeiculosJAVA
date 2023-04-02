@@ -33,39 +33,6 @@
 				<input type="text" name="idade" value="26" class="form-control">
 			</div>
 
-			<div class="form-group">
-				<label>Salário:</label> 	
-				<input type="text" name="salario" value="111111" class="form-control">
-			</div>
-
-			
-			<div class="form-group">						
-				<label>Tipo:</label>			
-				<div class="form-check">
-				  <label class="form-check-label">
-				    <input type="radio" name="tipo" value="P" class="form-check-input" > Padrão
-				  </label>
-				</div>			
-				<div class="form-check">Ö
-				  <label class="form-check-label">
-					<input type="radio" name="tipo" value="D" class="form-check-input"> Diretor
-				  </label>
-				</div>			
-				<div class="form-check">
-				  <label class="form-check-label">
-				    <input type="radio" name="tipo" value="A" checked class="form-check-input"> Administrador
-				  </label>
-				</div>			
-			</div>
-
-			<div class="form-group">
-				<label>Setor:</label>
-				<select name="setor" class="form-control">
-					<option value="1">Diretoria</option>
-					<option value="2">Comercial</option>
-					<option value="3" selected>Desenvolvimento</option>
-				</select>
-			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>

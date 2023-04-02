@@ -11,7 +11,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Home</a></li>
 	  <i:if test="${not empty usuario}">	
-	      <li><a href="/usuario/lista">Usuário</a></li>
+	      <li><a href="/usuario/lista">Usuï¿½rio</a></li>
 	      <li><a href="/cliente/lista">Cliente</a></li>
 	      <li><a href="/veiculo/lista">Veiculo</a></li>
 	      <li><a href="/carro/lista">Carro</a></li>
